@@ -7,6 +7,8 @@ public enum Genero {
     SERTANEJO("Sertanejo"),
     INDIE("Indie");
 
+    /*TODO: Add a new value to this enum after having the table created on DB*/
+
     private String tipo;
 
     Genero(String tipo){
