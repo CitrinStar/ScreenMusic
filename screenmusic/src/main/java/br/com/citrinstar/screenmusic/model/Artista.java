@@ -12,12 +12,21 @@ public class Artista {
     @jakarta.persistence.Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long Id;
+    @Column(unique = true)
     private String nome;
+    @Column(length = 1000)
     private String sobre;
     @Enumerated(EnumType.STRING)
     private Genero genero;
     @OneToMany(mappedBy = "artista", cascade = CascadeType.ALL, fetch = FetchType.EAGER, orphanRemoval = true)
     private List<Album> albuns;
+
+    public Artista(){}
+
+    public Artista(String nome, Genero genero) {
+        this.nome = nome;
+        this.genero = genero;
+    }
 
     public String getNome() {
         return nome;

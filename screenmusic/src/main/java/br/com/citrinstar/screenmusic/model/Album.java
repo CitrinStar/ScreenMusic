@@ -19,12 +19,12 @@ public class Album {
     @Enumerated(EnumType.STRING)
     private TipoAlbum tipo;
 
-    Album(){}
+    public Album(){}
 
-    Album(String nome, Artista artista, String tipo){
+    public Album(String nome, Artista artista, TipoAlbum tipo){
         this.nome = nome;
         this.artista = artista;
-        this.tipo = TipoAlbum.fromString(tipo);
+        this.tipo = tipo;
     }
 
     public String getNome() {
@@ -53,7 +53,6 @@ public class Album {
 
     public void addMusica(Musica musica){
         musicas.add(musica);
-        musica.setAlbum(this);
     }
 
     public TipoAlbum getTipo() {
@@ -70,5 +69,11 @@ public class Album {
 
     public void setId(Long id) {
         Id = id;
+    }
+
+    @Override
+    public String toString() {
+        return "nome='" + nome + '\'' +
+                ", tipo=" + tipo;
     }
 }

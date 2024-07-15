@@ -16,9 +16,9 @@ public class Musica {
     @JoinColumn(name = "album_id")
     private Album album;
 
-    Musica(){}
+    public Musica(){}
 
-    Musica(String nome){
+    public Musica(String nome){
         this.nome = nome;
     }
 
@@ -46,4 +46,9 @@ public class Musica {
         Id = id;
     }
 
+    @Override
+    public String toString() {
+        return "nome='" + nome + '\'' +
+                ", album=" + album;
+    }
 }

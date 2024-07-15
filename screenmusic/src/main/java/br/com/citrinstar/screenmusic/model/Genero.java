@@ -24,4 +24,8 @@ public enum Genero {
         throw new IllegalArgumentException("Nenhum gênero encontrado");
     }
 
+    @Override
+    public String toString() {
+        return "genero=" + tipo;
+    }
 }
